@@ -4,28 +4,12 @@ import (
 	//"errors"
 	"fmt"
 	"net/http"
-	"html/template"
+	//"html/template"
 )
 
 const portNumber =":8080"
 
-func Home(w http.ResponseWriter, r *http.Request){
-	//fmt.Fprintf(w, "This is the home page")
-	renderTemplate(w,"home.page.tmpl")
-}
 
-func About(w http.ResponseWriter, r *http.Request){
-	
-}
-
-func renderTemplate(w http.ResponseWriter, tmpl string){
-	parsedTemplate, _:=template.ParseFiles("./templates/"+ tmpl)
-	err:=parsedTemplate.Execute(w, nil)
-	if err!=nil{
-		fmt.Println("error parsing template", err)
-		return
-	}
-}
 
 
 
